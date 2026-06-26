@@ -199,7 +199,6 @@ function ChatWidget() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': apiKey,
         'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify({
