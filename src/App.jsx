@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+﻿import { useState, useEffect, useRef, useCallback } from 'react'
 import {
   Menu, X, ChevronRight, Mail, Phone, MapPin, Shield, Code, Globe, Bot,
   FileText, Users, Award, Building2, Briefcase, ArrowRight, ExternalLink,
@@ -194,19 +194,12 @@ function ChatWidget() {
 
   // Send message to Claude API / Enviar mensaje a Claude API
   const queryClaude = useCallback(async (allMessages) => {
-    const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY || ''
-    if (!apiKey) throw new Error('API key not configured. Set VITE_ANTHROPIC_API_KEY in your .env file.')
 
-    const apiMessages = allMessages
-      .filter(m => m.role === 'user' || m.role === 'assistant')
-      .map(m => ({ role: m.role, content: m.content }))
-
-    const res = await fetch(ANTHROPIC_URL, {
+    const res = await fetch('/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
         'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify({
