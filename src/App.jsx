@@ -199,13 +199,12 @@ function ChatWidget() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify({
         model: CHAT_MODEL,
         max_tokens: MAX_TOKENS,
         system: SYSTEM_PROMPT,
-        messages: apiMessages,
+        messages: allMessages,
       }),
     })
 
