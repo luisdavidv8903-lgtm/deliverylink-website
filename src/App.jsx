@@ -74,6 +74,9 @@ const CERTIFICATIONS = [
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages'
 const CHAT_MODEL = 'claude-sonnet-4-6'
 const MAX_TOKENS = 1000
+// Defaults to the same-origin Pages Function/Worker route. Override at build
+// time with VITE_CHAT_API_URL if the Worker is deployed to a workers.dev URL.
+const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat'
 
 const SYSTEM_PROMPT = `You are the virtual assistant for DELIVERYLINK LLC, a Florida-based IT consulting and software development company. Respond in English by default. Switch to Spanish immediately if the user writes in Spanish or requests it.
 
@@ -195,7 +198,7 @@ function ChatWidget() {
   // Send message to Claude API / Enviar mensaje a Claude API
   const queryClaude = useCallback(async (allMessages) => {
 
-    const res = await fetch('/api/chat', {
+    const res = await fetch(CHAT_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
