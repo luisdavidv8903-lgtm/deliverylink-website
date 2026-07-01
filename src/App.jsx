@@ -368,18 +368,24 @@ function CapabilityStatement() {
     <section id="capability" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-5">
         <SectionTitle badge="Federal Contracting" title="Capability Statement"
-          subtitle="Download or print our official capability statement for government contracting." />
+          subtitle="Download our official capability statement for government contracting." />
 
         <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl border border-slate-200 p-8 md:p-10">
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 pb-6 border-b border-slate-200">
             <div>
               <h3 className="text-2xl font-bold text-brand-dark">{COMPANY.name}</h3>
-              <p className="text-slate-500 mt-1">IT Consulting & Software Development</p>
+              <p className="text-slate-500 mt-1">IT Modernization & AI-Driven Automation</p>
             </div>
-            <button onClick={() => window.print()}
-              className="no-print flex items-center gap-2 bg-brand-dark hover:bg-brand text-white font-semibold px-5 py-2.5 rounded-xl transition">
-              <Printer size={18} /> Print / Download PDF
-            </button>
+            <div className="no-print flex items-center gap-3">
+              <a href="/DeliveryLink-Capability-Statement.pdf" download
+                className="flex items-center gap-2 bg-brand-dark hover:bg-brand text-white font-semibold px-5 py-2.5 rounded-xl transition">
+                <Download size={18} /> Download PDF
+              </a>
+              <button onClick={() => window.print()} aria-label="Print this page"
+                className="flex items-center gap-2 border border-slate-200 hover:border-brand text-slate-600 font-medium px-4 py-2.5 rounded-xl transition text-sm">
+                <Printer size={16} /> Print
+              </button>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
