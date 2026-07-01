@@ -1,4 +1,4 @@
-name = "deliverylink-chat-api"
+name = "deliverylink-website"
 main = "worker/chat-worker.js"
 compatibility_date = "2024-09-23"
 
