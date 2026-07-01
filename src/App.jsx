@@ -48,17 +48,17 @@ const SERVICES = [
 const PROJECTS = [
   {
     title: 'FinAdvisor Pro',
-    desc: 'AI-powered financial advisory platform with Claude API integration, TLS 1.3 encryption, role-based access control, and cloud deployment on Azure.',
+    desc: 'Gives financial advisors instant, AI-assisted client guidance while meeting bank-grade security requirements — Claude API analysis, TLS 1.3 encryption, and role-based access control, deployed on Azure.',
     tags: ['Claude API', 'React', 'Azure', 'RBAC', 'TLS 1.3'],
   },
   {
     title: 'SAM.gov Intelligence Platform',
-    desc: 'Automated federal opportunity monitoring system performing 60+ daily API searches with intelligent filtering and real-time alerts.',
+    desc: 'Eliminates hours of manual opportunity searches by automatically monitoring 60+ federal data sources daily, with intelligent filtering and real-time alerts.',
     tags: ['Python', 'REST API', 'Automation', 'Federal'],
   },
   {
     title: 'Link Credit Platform',
-    desc: 'Financial referral platform with verified partner integrations, earnings calculator, and responsive bilingual interface.',
+    desc: 'Lets referral partners track verified leads and calculate earnings in real time, in a bilingual interface, without manual reconciliation.',
     tags: ['React', 'Cloudflare', 'Bilingual', 'FinTech'],
   },
 ]
@@ -266,13 +266,14 @@ function ChatWidget() {
             </div>
             {leads.length > 0 && (
               <button onClick={() => setShowLeads(true)}
+                aria-label={`View ${leads.length} saved lead${leads.length === 1 ? '' : 's'}`}
                 className="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white text-xs font-semibold rounded-lg px-2.5 py-1.5 transition">
-                <Users size={14} /> {leads.length}
+                <Users size={14} aria-hidden="true" /> {leads.length}
               </button>
             )}
-            <button onClick={() => setOpen(false)}
+            <button onClick={() => setOpen(false)} aria-label="Close chat"
               className="w-8 h-8 flex items-center justify-center bg-white/15 hover:bg-white/25 rounded-lg transition">
-              <X size={18} className="text-white" />
+              <X size={18} className="text-white" aria-hidden="true" />
             </button>
           </div>
 
@@ -313,12 +314,13 @@ function ChatWidget() {
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage() } }}
               placeholder="Type a message... / Escribe un mensaje..."
+              aria-label="Type a message"
               rows={1}
               className="flex-1 border-1.5 border-slate-200 focus:border-brand rounded-xl px-3.5 py-2.5 text-sm resize-none outline-none max-h-20 overflow-y-auto font-[inherit]"
             />
-            <button onClick={sendMessage} disabled={!input.trim() || loading}
+            <button onClick={sendMessage} disabled={!input.trim() || loading} aria-label="Send message"
               className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition disabled:opacity-30 bg-blue-50 hover:bg-blue-100">
-              <Send size={18} className="text-brand-dark" />
+              <Send size={18} className="text-brand-dark" aria-hidden="true" />
             </button>
           </div>
 
@@ -347,14 +349,14 @@ function ChatWidget() {
       )}
 
       {/* FAB */}
-      <button onClick={() => setOpen(p => !p)} aria-label="Toggle chat"
+      <button onClick={() => setOpen(p => !p)} aria-label={open ? 'Close chat' : 'Open chat'} aria-expanded={open}
         className="fixed bottom-5 right-4 sm:right-5 w-[60px] h-[60px] rounded-full border-none cursor-pointer z-[9999] bg-gradient-to-br from-brand-dark to-brand shadow-lg flex items-center justify-center transition-transform"
         style={{
           transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
           animation: pulse ? 'dlPulse 2s infinite' : 'none',
           transition: 'transform 0.3s cubic-bezier(0.34,1.56,0.64,1)',
         }}>
-        {open ? <X size={26} className="text-white" /> : <MessageCircle size={26} className="text-white" />}
+        {open ? <X size={26} className="text-white" aria-hidden="true" /> : <MessageCircle size={26} className="text-white" aria-hidden="true" />}
       </button>
     </div>
   )
@@ -464,6 +466,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-800">
+      <a href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[9999] focus:bg-white focus:text-brand-dark focus:font-semibold focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
+        Skip to main content
+      </a>
+
       {/* ── Navbar ── */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm border-b border-slate-100' : 'bg-transparent'
@@ -471,7 +478,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-dark to-brand flex items-center justify-center">
-              <Code size={20} className="text-white" />
+              <Code size={20} className="text-white" aria-hidden="true" />
             </div>
             <span className="font-bold text-lg text-slate-800">DELIVERYLINK</span>
           </a>
@@ -487,13 +494,15 @@ export default function App() {
             </a>
           </div>
 
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2"
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={menuOpen} aria-controls="mobile-menu">
+            {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
+          <div id="mobile-menu" className="md:hidden bg-white border-t border-slate-100 shadow-lg">
             <div className="flex flex-col p-5 gap-4">
               <NavLink href="#services" onClick={closeMenu}>Services</NavLink>
               <NavLink href="#projects" onClick={closeMenu}>Projects</NavLink>
@@ -508,6 +517,7 @@ export default function App() {
         )}
       </nav>
 
+      <main id="main-content" tabIndex={-1}>
       {/* ── Hero ── */}
       <section id="hero" className="pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-b from-blue-50/60 to-white">
         <div className="max-w-6xl mx-auto px-5">
@@ -639,6 +649,7 @@ export default function App() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* ── Footer ── */}
       <footer className="bg-slate-900 text-slate-400 py-12">
