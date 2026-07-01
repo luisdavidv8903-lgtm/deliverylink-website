@@ -516,13 +516,13 @@ export default function App() {
               <Shield size={14} /> Hispanic American-Owned Small Business
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-5 animate-fadeInUp delay-100">
-              IT Consulting &<br />
+              IT Modernization &<br />
               <span className="bg-gradient-to-r from-brand-dark to-brand bg-clip-text text-transparent">
-                Software Development
+                AI-Driven Automation
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-500 mb-8 max-w-xl animate-fadeInUp delay-200">
-              Custom software, AI integration, web modernization, and federal procurement consulting from Loxahatchee, Florida.
+              We help federal agencies cut operational costs and retire legacy systems with AI-powered automation, secure cloud architecture, and Section 508–compliant software — built from Loxahatchee, Florida.
             </p>
             <div className="flex flex-wrap gap-4 animate-fadeInUp delay-300">
               <a href="#contact"
@@ -539,6 +539,7 @@ export default function App() {
               <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> SAM.gov Registered</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> CAGE: {COMPANY.cage}</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> UEI: {COMPANY.uei}</span>
+              <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> Section 508 Compliant</span>
             </div>
           </div>
         </div>
