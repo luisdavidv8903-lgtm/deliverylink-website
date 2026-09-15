@@ -1,1 +1,10 @@
-/* /index.html 200
+# Multi-page app — each route is a real static file (technology/index.html,
+# etc.), and Cloudflare Pages' built-in pretty-URL resolution should already
+# serve them at the clean path. These are explicit, scoped rewrites (200,
+# not a redirect) as a safety net for the exact 4 known routes, so the
+# no-trailing-slash URLs work even if that inference doesn't apply here.
+# Deliberately NOT a wildcard: a genuinely missing path still 404s normally.
+/technology    /technology/index.html    200
+/delivery      /delivery/index.html      200
+/capabilities  /capabilities/index.html  200
+/contact       /contact/index.html       200
