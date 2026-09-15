@@ -29,7 +29,7 @@ const SERVICES = [
   },
   {
     icon: Globe, title: 'Web Development & Modernization', rate: '$95/hr',
-    desc: 'React, Next.js, and modern web platforms. Legacy system modernization with Section 508 compliance.',
+    desc: 'React, Next.js, and modern web platforms. Legacy system modernization built with accessibility in mind.',
   },
   {
     icon: Shield, title: 'IT Consulting', rate: '$95–$125/hr',
@@ -64,9 +64,8 @@ const PROJECTS = [
 ]
 
 const CERTIFICATIONS = [
-  { label: 'Active SAM.gov Registration', detail: `UEI: ${COMPANY.uei}` },
   { label: 'CAGE Code', detail: COMPANY.cage },
-  { label: 'Hispanic American-Owned Small Business', detail: 'MFMP Certified' },
+  { label: 'Hispanic American-Owned Small Business', detail: 'Registered Florida MFMP Vendor' },
   { label: 'Google IT Support Professional', detail: 'Certificate' },
 ]
 
@@ -97,7 +96,7 @@ SERVICES & RATES:
 - AI/LLM Integration: $125-$165/hr
 - Government Procurement Consulting: $95/hr
 
-PAST PERFORMANCE:
+TECHNICAL PORTFOLIO (internal/personal projects — not government past performance):
 - FinAdvisor Pro: AI financial platform (Claude API, TLS 1.3, RBAC, cloud deployment)
 - SAM.gov Intelligence Platform: automated federal opportunity monitoring, 60+ daily API searches
 
@@ -108,10 +107,11 @@ YOUR 4 TASKS:
 4. Schedule callback requests with preferred date/time
 
 CERTIFICATIONS (only claim these):
-- Active SAM.gov registration (UEI: JK4YVQB7DZ24)
 - CAGE Code: 21GG9
-- Hispanic American-Owned Small Business (MFMP)
+- Hispanic American-Owned Small Business (Registered Florida MFMP Vendor)
 - Google IT Support Professional Certificate
+- DO NOT claim active/current SAM.gov registration status — it has not been verified
+- DO NOT claim Section 508 compliance as a certification
 - DO NOT claim SDB certification`
 
 const WELCOME_MSG = `Hi! I'm the DELIVERYLINK LLC virtual assistant. I can help you learn about our IT services, get pricing information, or schedule a callback with Luis.\n\nHow can I help you today?\n\n_(Para español, escribe 'español')_`
@@ -426,7 +426,7 @@ function CapabilityStatement() {
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> Custom Software Development (React, Python, Node.js)</li>
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> AI/LLM Integration (Claude API, GPT, NLP)</li>
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> Cloud Architecture (Azure, AWS, Cloudflare)</li>
-                <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> Web Application Modernization (Section 508)</li>
+                <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> Web Application Modernization (Accessibility-Focused)</li>
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> IT Strategic Consulting & Digital Transformation</li>
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" /> Federal Procurement & Proposal Support</li>
               </ul>
@@ -434,7 +434,7 @@ function CapabilityStatement() {
 
             <div>
               <h4 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
-                <Award size={18} className="text-brand" /> Certifications & Past Performance
+                <Award size={18} className="text-brand" /> Certifications & Technical Portfolio
               </h4>
               <div className="space-y-1.5 text-sm text-slate-600 mb-4">
                 {CERTIFICATIONS.map((c, i) => (
@@ -538,7 +538,7 @@ export default function App() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-500 mb-8 max-w-xl animate-fadeInUp delay-200">
-              We help federal agencies cut operational costs and retire legacy systems with AI-powered automation, secure cloud architecture, and Section 508–compliant software — built from Loxahatchee, Florida.
+              We help federal agencies cut operational costs and retire legacy systems with AI-powered automation and secure cloud architecture — built from Loxahatchee, Florida.
             </p>
             <div className="flex flex-wrap gap-4 animate-fadeInUp delay-300">
               <a href="#contact"
@@ -552,10 +552,8 @@ export default function App() {
             </div>
 
             <div className="flex flex-wrap gap-6 mt-12 text-sm text-slate-500 animate-fadeInUp delay-400">
-              <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> SAM.gov Registered</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> CAGE: {COMPANY.cage}</span>
               <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> UEI: {COMPANY.uei}</span>
-              <span className="flex items-center gap-1.5"><CheckCircle size={16} className="text-green-500" /> Section 508 Compliant</span>
             </div>
           </div>
         </div>
@@ -587,8 +585,8 @@ export default function App() {
       {/* ── Projects ── */}
       <section id="projects" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-5">
-          <SectionTitle badge="Our Work" title="Past Performance"
-            subtitle="Proven delivery on complex technical projects." />
+          <SectionTitle badge="Our Work" title="Technical Portfolio"
+            subtitle="A selection of technical projects built to demonstrate our engineering capability." />
 
           <div className="grid md:grid-cols-3 gap-6">
             {PROJECTS.map((proj, i) => (
