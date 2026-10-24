@@ -24,7 +24,7 @@ DELIVERYLINK LLC now has two genuinely different service lines (Technology & Dig
 - [ ] **Business Description** — must not restate the claims already removed from the website: no "SAM.gov Registered," no "Section 508 Compliant," no "MFMP Certified" (use "Registered Florida MFMP Vendor" if referencing it at all), no government past performance. Should mention both divisions if Option A/B is chosen for one listing.
 - [ ] **Services** — populate with the real service list once finalized: Technology services from `/technology`, or Delivery services from `/delivery` (§8 of `DELIVERYLINK_WEB_EXPANSION_AUDIT.md` has the full reasoning on which delivery services are currently defensible to list).
 - [ ] **Website** — confirm it points to the right URL for whichever listing this is (`/`, `/technology`, or `/delivery` — decide per the Option above).
-- [ ] **Phone** — confirm it matches (561) 679-0314 exactly (NAP consistency with the website's `TrustBar`/footer).
+- [ ] **Phone** — confirm it matches (786) 577-8236 exactly (NAP consistency with the website's `TrustBar`/footer).
 - [ ] **Address visibility** — confirm whether the address is shown publicly or hidden (service-area business setting) — the website deliberately shows only city/state/ZIP, never a full street address; GBP should match that posture unless there's a reason to differ.
 - [ ] **Photos** — real photos only, once available (a courier vehicle, real delivery/office work) — no stock photography, no AI-generated images presented as real.
 - [ ] **Hours** — confirm current accuracy; do not let this document or the website's code invent hours that aren't actually set.

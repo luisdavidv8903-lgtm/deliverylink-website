@@ -33,7 +33,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href={`tel:${COMPANY.phone.replace(/[^\d+]/g, '')}`}
+              <a href={`tel:${COMPANY.phoneTel}`}
                 className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg hover:border-brand/20 transition-all text-center group">
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-brand-dark flex items-center justify-center transition-colors">
                   <Phone size={24} className="text-brand-dark group-hover:text-white transition-colors" />
