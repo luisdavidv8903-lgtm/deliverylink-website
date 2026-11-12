@@ -4,7 +4,7 @@ import Footer from '../components/Footer.jsx'
 import SectionTitle from '../components/SectionTitle.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import TrustBar from '../components/TrustBar.jsx'
-import ChatWidget from '../components/ChatWidget.jsx'
+import ContactBar from '../components/ContactBar.jsx'
 import { DELIVERY_SERVICES } from '../data/deliveryServices.js'
 
 export default function Delivery() {
@@ -148,7 +148,7 @@ export default function Delivery() {
       </main>
 
       <Footer />
-      <ChatWidget />
+      <ContactBar />
     </div>
   )
 }

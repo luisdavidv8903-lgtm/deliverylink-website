@@ -3,7 +3,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import TrustBar from '../components/TrustBar.jsx'
 import DivisionCard from '../components/DivisionCard.jsx'
-import ChatWidget from '../components/ChatWidget.jsx'
+import ContactBar from '../components/ContactBar.jsx'
 
 const AUDIENCES = [
   { icon: Landmark, title: 'Government Agencies & Local Government', desc: 'Federal, state, and Palm Beach County offices.' },
@@ -119,7 +119,7 @@ export default function Home() {
       </main>
 
       <Footer />
-      <ChatWidget />
+      <ContactBar />
     </div>
   )
 }
