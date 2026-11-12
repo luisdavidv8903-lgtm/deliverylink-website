@@ -4,7 +4,7 @@ import Footer from '../components/Footer.jsx'
 import SectionTitle from '../components/SectionTitle.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import TrustBar from '../components/TrustBar.jsx'
-import ChatWidget from '../components/ChatWidget.jsx'
+import ContactBar from '../components/ContactBar.jsx'
 import { TECH_SERVICES, TECH_PORTFOLIO } from '../data/techServices.js'
 
 export default function Technology() {
@@ -111,7 +111,7 @@ export default function Technology() {
       </main>
 
       <Footer />
-      <ChatWidget />
+      <ContactBar />
     </div>
   )
 }

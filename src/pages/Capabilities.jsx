@@ -2,7 +2,7 @@ import { Building2, Briefcase, Award, Download, Printer, Shield, Truck, Code, Cl
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import SectionTitle from '../components/SectionTitle.jsx'
-import ChatWidget from '../components/ChatWidget.jsx'
+import ContactBar from '../components/ContactBar.jsx'
 import { COMPANY, CERTIFICATIONS } from '../data/company.js'
 import { TECH_PORTFOLIO } from '../data/techServices.js'
 import { DELIVERY_SERVICES } from '../data/deliveryServices.js'
@@ -62,8 +62,8 @@ export default function Capabilities() {
                   <div className="space-y-1.5 text-sm text-slate-600">
                     <p><strong>Owner:</strong> {COMPANY.owner}</p>
                     <p><strong>Location:</strong> {COMPANY.location}</p>
-                    <p><strong>Phone:</strong> {COMPANY.phone}</p>
-                    <p><strong>Email:</strong> {COMPANY.email}</p>
+                    <p><strong>WhatsApp:</strong> <a href={COMPANY.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">{COMPANY.whatsapp}</a></p>
+                    <p><strong>Email:</strong> <a href={COMPANY.emailUrl} className="text-brand hover:underline">{COMPANY.email}</a></p>
                     <p><strong>UEI:</strong> {COMPANY.uei}</p>
                     <p><strong>CAGE:</strong> {COMPANY.cage}</p>
                     <p><strong>Business Type:</strong> Small Business, Hispanic American-Owned</p>
@@ -184,7 +184,7 @@ export default function Capabilities() {
       </main>
 
       <Footer />
-      <ChatWidget />
+      <ContactBar />
     </div>
   )
 }

@@ -1,8 +1,8 @@
-import { Mail, Phone, MapPin, Code, Truck } from 'lucide-react'
+import { Mail, MessageCircle, MapPin, Code, Truck } from 'lucide-react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import SectionTitle from '../components/SectionTitle.jsx'
-import ChatWidget from '../components/ChatWidget.jsx'
+import ContactBar from '../components/ContactBar.jsx'
 import { COMPANY } from '../data/company.js'
 
 export default function Contact() {
@@ -22,7 +22,18 @@ export default function Contact() {
               subtitle="Reach out about a technology project, a delivery request, or a government procurement question." />
 
             <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-14">
-              <a href={`mailto:${COMPANY.email}`}
+              <a href={COMPANY.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg hover:border-brand/20 transition-all text-center group">
+                <div className="w-14 h-14 rounded-2xl bg-green-50 group-hover:bg-green-600 flex items-center justify-center transition-colors">
+                  <MessageCircle size={24} className="text-green-700 group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <div className="font-bold text-slate-800 mb-1">WhatsApp</div>
+                  <div className="text-brand text-sm font-medium">{COMPANY.whatsapp}</div>
+                </div>
+              </a>
+
+              <a href={COMPANY.emailUrl}
                 className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg hover:border-brand/20 transition-all text-center group">
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-brand-dark flex items-center justify-center transition-colors">
                   <Mail size={24} className="text-brand-dark group-hover:text-white transition-colors" />
@@ -30,17 +41,6 @@ export default function Contact() {
                 <div>
                   <div className="font-bold text-slate-800 mb-1">Email</div>
                   <div className="text-brand text-sm font-medium">{COMPANY.email}</div>
-                </div>
-              </a>
-
-              <a href={`tel:${COMPANY.phoneTel}`}
-                className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg hover:border-brand/20 transition-all text-center group">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-brand-dark flex items-center justify-center transition-colors">
-                  <Phone size={24} className="text-brand-dark group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <div className="font-bold text-slate-800 mb-1">Phone</div>
-                  <div className="text-brand text-sm font-medium">{COMPANY.phone}</div>
                 </div>
               </a>
 
@@ -61,7 +61,7 @@ export default function Contact() {
                   <Code size={18} className="text-brand-dark" />
                   <h3 className="font-bold text-slate-800">Technology Inquiries</h3>
                 </div>
-                <p className="text-slate-500 text-sm">Software development, AI integration, IT consulting, or government procurement consulting — email or call, or use the chat assistant in the corner.</p>
+                <p className="text-slate-500 text-sm">Software development, AI integration, IT consulting, or government procurement consulting — message us on WhatsApp or send an email.</p>
               </div>
               <div className="bg-slate-50 rounded-2xl border border-slate-200 p-6">
                 <div className="flex items-center gap-2 mb-2">
@@ -76,7 +76,7 @@ export default function Contact() {
       </main>
 
       <Footer />
-      <ChatWidget />
+      <ContactBar />
     </div>
   )
 }

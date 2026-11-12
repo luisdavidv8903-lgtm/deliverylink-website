@@ -3,7 +3,7 @@ import { COMPANY } from '../data/company.js'
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 py-12">
+    <footer className="bg-slate-900 text-slate-400 pt-12 pb-24 md:pb-12">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2.5">
@@ -21,9 +21,9 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-center md:text-right">
-            <a href={`mailto:${COMPANY.email}`} className="hover:text-white transition">{COMPANY.email}</a>
+            <a href={COMPANY.emailUrl} className="hover:text-white transition">{COMPANY.email}</a>
             <span className="mx-2">•</span>
-            <span>{COMPANY.phone}</span>
+            <a href={COMPANY.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp {COMPANY.whatsapp}</a>
           </div>
         </div>
 

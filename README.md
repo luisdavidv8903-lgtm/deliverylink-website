@@ -1,13 +1,11 @@
 # DELIVERYLINK LLC — Company Website
 
-React + Vite + Tailwind CSS website with Claude-powered AI chat widget.
+React + Vite + Tailwind CSS static website. Contact is WhatsApp and email only; there is no backend and no secrets.
 
 ## Local Development
 
 ```bash
 npm install
-cp .env.example .env
-# Edit .env and add your Anthropic API key
 npm run dev
 ```
 
@@ -34,14 +32,9 @@ gh repo create deliverylink-website --private --source=. --push
    - **Node.js version:** 18 (or latest LTS)
 5. Click **Save and Deploy**
 
-### 3. Add Environment Variable
+### 3. Environment variables
 
-1. In Cloudflare Pages → your project → **Settings** → **Environment variables**
-2. Add variable:
-   - **Name:** `VITE_ANTHROPIC_API_KEY`
-   - **Value:** your Anthropic API key (`sk-ant-api03-...`)
-3. Set for **Production** and **Preview** environments
-4. Trigger a new deployment for the variable to take effect
+None are needed. Do not add API keys or `VITE_*` secrets: anything prefixed `VITE_` is embedded in the public bundle.
 
 ### 4. Custom Domain (deliverylinktech.com)
 
@@ -55,5 +48,4 @@ gh repo create deliverylink-website --private --source=. --push
 - **React 18** + **Vite 4**
 - **Tailwind CSS 3** for styling
 - **Lucide React** for icons
-- **Claude API** (claude-sonnet-4-6) for AI chat widget
 - **Cloudflare Pages** for hosting
